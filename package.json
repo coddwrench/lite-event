@@ -1,6 +1,6 @@
 {
   "name": "lite-event",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "es2015": "index.ts",
   "umd:main": "dist/index.umd.js",
@@ -26,10 +26,13 @@
   },
   "homepage": "https://github.com/coddwrench/lite-event",
   "keywords": [
-    "gulpplugin"
+    "typescript",
+    "lite-event"
   ],
   "files": [
-    "index.js"
+    "dist",
+    "index.ts",
+    "readme.md"
   ],
   "repository": "https://github.com/coddwrench/lite-event.git"
 }

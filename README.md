@@ -1,21 +1,17 @@
 # lite-event
-OOP Events based from [TypeScript LiteEvent Events](https://gist.github.com/JasonKleban/50cee44960c225ac1993c922563aa540)
+OOP Events 
+based from [TypeScript LiteEvent Events](https://gist.github.com/JasonKleban/50cee44960c225ac1993c922563aa540)
 
 ## install for npm
 
 Install package with NPM and add it to your dependencies:
 
-`npm install typescript-lite-event`
+`npm install lite-event --save`
 
-Install definitions use **[tsd](https://www.npmjs.com/package/tsd)**:
-
-`$ tsd init`
-
-
-## Usage
+## Usage from typescript
 import objects
 ```typescript
-import { LiteEvent, IEventHandler } from "./LiteEvent";
+import { LiteEvent, IEventHandler } from "lite-event";
 ```
 use
 ```typescript
