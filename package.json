@@ -1,0 +1,35 @@
+{
+  "name": "lite-event",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "es2015": "index.ts",
+  "umd:main": "dist/index.umd.js",
+  "typescript": {
+    "definition": "dist/index.d.ts"
+  },
+  "license": "MIT",
+  "author": "Seregin Vadim <codwrench@gmail.com>",
+  "bugs": "https://github.com/coddwrench/lite-event/issues",
+  "scripts": {
+    "build": "tsc index.ts -t es3 -m commonjs -d --outDir dist &&  rollup -c rollup.config.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^2.6.1",
+    "tslint": "^5.8.0",
+    "tslint-config-prettier": "^1.6.0",
+    "tslint-config-standard": "^7.0.0",
+    "rollup": "^0.50.0",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.2"
+  },
+  "homepage": "https://github.com/coddwrench/lite-event",
+  "keywords": [
+    "gulpplugin"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "repository": "https://github.com/coddwrench/lite-event.git"
+}
