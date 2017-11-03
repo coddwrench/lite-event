@@ -1,6 +1,6 @@
 {
   "name": "lite-event",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "es2015": "index.ts",
   "umd:main": "dist/index.umd.js",
