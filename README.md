@@ -10,12 +10,12 @@ Install package with NPM and add it to your dependencies:
 
 ## Usage from typescript
 import objects
-```typescript
-import { LiteEvent, IEventHandler } from "lite-event";
+```javascript
+import { LiteEvent, IEventHandler, IEventHandler } from "lite-event";
 ```
 use
-```typescript
-interface IMyClassFireEventArgs {
+```javascript
+interface IMyClassFireEventArgs extends IEventHandler {
 	count: number;
 }
 
