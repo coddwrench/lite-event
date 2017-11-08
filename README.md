@@ -9,6 +9,7 @@ Install package with NPM and add it to your dependencies:
 `npm install lite-event --save`
 
 ## Usage from typescript
+### Syntactic sugar example
 import objects
 ```javascript
 import { LiteEvent, IEventHandler, IEventHandler } from "lite-event";
@@ -60,6 +61,158 @@ myCounter
 	}).onIncrement().oneIncrement((counter, args) => {
 		console.log("one (count = " + args.count + ")");
 	});
+
+myCounter.increment();
+myCounter.increment();
+myCounter.increment();
+myCounter.increment();
+```
+
+### Default example
+import objects
+```javascript
+import { LiteEvent, IEventHandler, IEventHandler } from "lite-event";
+```
+use
+```javascript
+interface IMyClassFireEventArgs {
+	count: number;
+}
+
+class MyCounter {
+
+	private _count = 0;
+	private _incrementEvent = new LiteEvent<MyCounter, IMyClassFireEventArgs>();
+
+	public get incremented(): IEvent<MyCounter, IMyClassFireEventArgs> { return this._incrementEvent; }
+
+	public increment() {
+		this._count++;
+		this._incrementEvent.trigger(this, {
+			count: this._count
+		});
+		return this;
+	}
+}
+
+var myCounter = new MyCounter();
+var heandler = (counter, args) => {
+	if (args.count === 2) {
+		console.log("stop if count equally 2 (count = " + args.count + ")");
+	} else {
+		myCounter.incremented.off(heandler);
+	}
+};
+
+myCounter.incremented.on((counter, args) => {
+	console.log("always (count = " + args.count + ")");
+});
+
+myCounter.incremented.one((counter, args) => {
+	console.log("one (count = " + args.count + ")");
+});
+
+myCounter.incremented.on(heandler);
+
+myCounter.increment();
+myCounter.increment();
+myCounter.increment();
+myCounter.increment();
+```
+
+## Usage from javascript
+### ES6 example
+import objects
+```javascript
+import { LiteEvent, IEventHandler, IEventHandler } from "lite-event";
+```
+use
+```javascript
+import { LiteEvent, IEventHandler, IEvent, } from "../dist/index";
+
+class MyCounter {
+	constructor() {
+		this._count = 0;
+		this._incrementEvent = new LiteEvent();
+	}
+	get incremented() { return this._incrementEvent; }
+	increment() {
+		this._count++;
+		this._incrementEvent.trigger(this, {
+			count: this._count
+		});
+		return this;
+	}
+}
+
+var myCounter = new MyCounter();
+var heandler = (counter, args) => {
+	if (args.count === 2) {
+		console.log("stop if count equally 2 (count = " + args.count + ")");
+	} else {
+		myCounter.incremented.off(heandler);
+	}
+};
+
+myCounter.incremented.on((counter, args) => {
+	console.log("always (count = " + args.count + ")");
+});
+
+myCounter.incremented.one((counter, args) => {
+	console.log("one (count = " + args.count + ")");
+});
+
+myCounter.incremented.on(heandler);
+
+myCounter.increment();
+myCounter.increment();
+myCounter.increment();
+myCounter.increment();
+```
+### ES3 example
+import objects
+```javascript
+var LiteEvent = require("lite-event").LiteEvent;
+```
+use
+```javascript
+var MyCounter = (function () {
+
+	function MyCounter() {
+		this._count = 0;
+		this._incrementEvent = new LiteEvent();
+	}
+
+	LiteEvent.prototype.increment = function () {
+		var oneHendler = function (sender, args) {
+			this._count++;
+			this._incrementEvent.trigger(this, {
+				count: this._count
+			});
+			return this;
+		};
+	};
+	return MyCounter;
+}());
+
+var myCounter = new MyCounter();
+var heandler = (counter, args) => {
+	if (args.count === 2) {
+		console.log("stop if count equally 2 (count = " + args.count + ")");
+	} else {
+		myCounter.incremented.off(heandler);
+	}
+};
+
+myCounter.incremented.on((counter, args) => {
+	console.log("always (count = " + args.count + ")");
+});
+
+myCounter.incremented.one((counter, args) => {
+	console.log("one (count = " + args.count + ")");
+});
+
+myCounter.incremented.on(heandler);
 
 myCounter.increment();
 myCounter.increment();
