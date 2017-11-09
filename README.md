@@ -1,12 +1,50 @@
 # lite-event
 OOP Events 
-based from [TypeScript LiteEvent Events](https://gist.github.com/JasonKleban/50cee44960c225ac1993c922563aa540)
+based from [TypeScript LiteEvent](https://gist.github.com/JasonKleban/50cee44960c225ac1993c922563aa540)
 
 ## install for npm
 
 Install package with NPM and add it to your dependencies:
 
 `npm install lite-event --save`
+
+## lite-event functions
+
+initialization
+```javascript
+	var event = new LiteEvent();
+	var handler = (sender, args)=>{
+		// reaction to an event
+	}
+```
+### Subscribe to event
+```javascript
+	event.on(handler);
+```
+### Unsubscribe from event
+by on/off subscribe
+```javascript
+	event.on(handler);
+	// some code
+	event.off(handler);
+```
+or one time subscribe
+```javascript
+	event.one(handler);
+```
+
+### Remove all subscribe
+```javascript
+	event.clean(handler);
+```
+
+### Trigger event
+```javascript
+	var args = {
+		//some args
+	};
+	event.trigger(this, args);
+```
 
 ## Usage from typescript
 ### Syntactic sugar example
@@ -128,8 +166,6 @@ import { LiteEvent, IEventHandler, IEventHandler } from "lite-event";
 ```
 use
 ```javascript
-import { LiteEvent, IEventHandler, IEvent, } from "../dist/index";
-
 class MyCounter {
 	constructor() {
 		this._count = 0;
