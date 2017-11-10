@@ -3,14 +3,11 @@ import { LiteEvent, IEventHandler, IEvent, } from "../index";
 interface IMouseEventEventArgs extends MouseEvent { }
 
 class MyMouse {
-
 	private _mouseoverEvent = new LiteEvent<MyMouse, IMouseEventEventArgs>();
 	private _onmouseoutEvent = new LiteEvent<MyMouse, IMouseEventEventArgs>();
-
 	public get mouseover(): IEvent<MyMouse, IMouseEventEventArgs> {
 		return this._mouseoverEvent;
 	}
-
 	public get onmouseout(): IEvent<MyMouse, IMouseEventEventArgs> {
 		return this._onmouseoutEvent;
 	}
