@@ -23,38 +23,38 @@ Install package with NPM and add it to your dependencies:
 ## lite-event functions
 initialization
 ```javascript
-    var event = new LiteEvent();
-    var handler = (sender, args)=>{
-        // reaction to an event
-    }
+var event = new LiteEvent();
+var handler = (sender, args)=>{
+	// reaction to an event
+}
 ```
 ### Subscribe to event
 ```javascript
-    event.on(handler);
+event.on(handler);
 ```
 ### Unsubscribe from event
 by on/off subscribe
 ```javascript
-    event.on(handler);
-    // some code
-    event.off(handler);
+event.on(handler);
+// some code
+event.off(handler);
 ```
 or one time subscribe
 ```javascript
-    event.one(handler);
+event.one(handler);
 ```
 
 ### Remove all subscribe
 ```javascript
-    event.clean();
+event.clean();
 ```
 
 ### Trigger event
 ```javascript
-    var args = {
-        //some args
-    };
-    event.trigger(this, args);
+var args = {
+	//some args
+};
+event.trigger(this, args);
 ```
 
 ## Usage from typescript
