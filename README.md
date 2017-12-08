@@ -21,18 +21,19 @@ Install package with NPM and add it to your dependencies:
     * [ES3 example](#es3-example)
 
 ## lite-event functions
-initialization
+
+###Initialization
 ```javascript
 var event = new LiteEvent();
 var handler = (sender, args)=>{
 	// reaction to an event
 }
 ```
-### Subscribe to event
+### Subscribe
 ```javascript
 event.on(handler);
 ```
-### Unsubscribe from event
+### Unsubscribe
 by on/off subscribe
 ```javascript
 event.on(handler);
@@ -58,7 +59,7 @@ event.trigger(this, args);
 ```
 
 ## Usage from typescript
-### Syntactic sugar example
+### Syntactic sugar
 import objects
 ```javascript
 import { LiteEvent, IEventHandler, IEventHandler } from "lite-event";
@@ -170,7 +171,7 @@ myCounter.increment();
 ```
 
 ## Usage from javascript
-### ES6 example
+### ES6
 import objects
 ```javascript
 import { LiteEvent, IEventHandler, IEventHandler } from "lite-event";
@@ -216,7 +217,7 @@ myCounter.increment();
 myCounter.increment();
 myCounter.increment();
 ```
-### ES3 example
+### ES3
 import objects
 ```javascript
 var LiteEvent = require("lite-event").LiteEvent;
