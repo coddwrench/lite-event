@@ -9,16 +9,16 @@ Install package with NPM and add it to your dependencies:
 `npm install lite-event --save`
 
 * [Functions lite-event](#lite-event-functions)
-    * [Subscribe](#subscribe-to-event)
-    * [Unsubscribe](#unsubscribe-from-event)
+    * [Subscribe](#subscribe)
+    * [Unsubscribe](#unsubscribe)
     * [Remove all subscribe](#remove-all-subscribe)
     * [Trigger event](#trigger-event)
 * [Usage from typescript](#usage-from-typescript)
-    * [Syntactic sugar](#syntactic-sugar-example)
+    * [Syntactic sugar](#syntactic-sugar)
     * [Default example](#default-example)
 * [Usage from javascript](#usage-from-javascript)
-    * [ES6](#es6-example)
-    * [ES3](#es3-example)
+    * [ES6](#es6)
+    * [ES3](#es3-)
 
 ## lite-event functions
 
